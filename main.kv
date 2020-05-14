@@ -1,0 +1,275 @@
+<LoginScreen>
+
+<FirstNavItem>
+    theme_text_color: 'Custom'
+    divider: None
+    on_press: self.callback() 
+
+    IconLeftWidget:
+        icon: root.icon
+
+<SecondNavItem>
+    theme_text_color: 'Custom'
+    divider: None
+    on_press: self.callback() 
+
+    IconLeftWidget:
+        icon: root.icon
+
+<ThirdNavItem>
+    theme_text_color: 'Custom'
+    divider: None
+    on_press: self.callback() 
+
+    IconLeftWidget:
+        icon: root.icon
+
+<FourthNavItem>
+    theme_text_color: 'Custom'
+    divider: None
+    on_press: self.callback() 
+
+    IconLeftWidget:
+        icon: root.icon
+
+<FifthNavItem>
+    theme_text_color: 'Custom'
+    divider: None
+    on_press: self.callback() 
+
+    IconLeftWidget:
+        icon: root.icon
+
+<GenderDropDown>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+    text: "Gender"
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.open_gender_dropdown()
+
+<CategoryDropDown>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+    text: "Category"
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.open_category_dropdown()
+
+<DisciplineDropDown>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    text: "Discipline"
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.open_discipline_dropdown()
+
+<ResultTextField>
+    size_hint: None, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+    hint_text: 'Result'
+    required: True
+    helper_text_mode: "on_error"
+    helper_text: "Required"
+    
+
+<ResultEntry>  
+    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+    text: 'Enter Result'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.result_entry()
+
+<ResultScoreButton>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.05}
+    text: "Print Result Score"
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: 
+        root.get_result_score()
+
+<EventLevelDropDown>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+    text: 'Event Level'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.open_event_level_dropdown()
+
+<PlacingDropDown>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    text: 'Placing'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.open_placing_dropdown()
+
+<PlacingScore>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+    text: 'Placing Score'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.print_event()
+
+<WindTextField>
+    size_hint: None, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+    hint_text: 'Wind'
+
+<EnterWind>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    text: 'Enter Wind'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.wind()
+
+<WindMod>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+    text: 'Wind Modification'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: 
+        root.print_wind_mod()
+
+<PerformanceScore>
+    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+    text: 'Print Performance Score'
+    theme_text_color: "Custom"
+    text_color: 1,1,1,1
+    md_bg_color: 0,0,0,1
+    on_press: root.display_performance_score()
+
+<ListItemWithCheckbox@OneLineAvatarIconListItem>
+    MyAvatar:
+        source: "data/logo/kivy-icon-128.png"
+    MyCheckbox:
+
+<EventListScreen>
+    BoxLayout:
+        ScrollView:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.375}
+            MDList:
+                id: scroll
+
+<EventTextSearch>
+    size_hint: .7, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.945}
+    hint_text: 'Search Event'
+    mode: "rectangle"
+    on_text: root.repopulate_event_list()
+
+<TrackingScreen>
+    size_hint: .7, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.945}
+    hint_text: 'Search Event'
+    mode: "rectangle"
+<LoginScreen>
+
+<ContentNavigationDrawer>
+
+    BoxLayout:
+        orientation: 'vertical'
+    
+
+        FloatLayout:
+            size_hint_y: None
+            height: "205dp"
+
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: 320, 205
+                    source: "Athletics-New-Zealand-Logo-1.jpg"
+
+            BoxLayout:
+                id: top_box
+                size_hint_y: None
+                height: "200dp"
+                #padding: "10dp"
+                x: root.parent.x
+                pos_hint: {"top": 1}
+
+            MDIconButton:
+                icon: "close"
+                x: root.parent.x + dp(10)
+                pos_hint: {"top": 1}
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1
+                on_release: root.parent.set_state('toggle')
+
+
+        ScrollView:
+            pos_hint: {"top": 1}
+
+            GridLayout:
+                id: box_item
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+
+BoxLayout:
+    
+    BoxLayout:
+        orientation: 'vertical'   
+        MDToolbar:
+            id: main_toolbar
+            title: "Home"
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            md_bg_color: 0,0,0,1
+            left_action_items: [['menu', lambda x: app.root.ids.nav_drawer.set_state('toggle')]]
+
+        NavigationLayout:
+            id: nav
+
+            ScreenManager:
+                id: MainScreenManager
+                Screen:
+                    name: 'screen1'
+                    GenderDropDown: 
+                    CategoryDropDown:
+                    DisciplineDropDown:
+                    ResultScoreButton:
+                    ResultTextField:
+                        id: resulttextfield
+                    ResultEntry: 
+                    
+                    
+                    
+                    
+                Screen:
+                    name: 'screen2'
+                    EventLevelDropDown:
+                    PlacingDropDown:
+                    PlacingScore:
+                    PerformanceScore:   
+            
+                Screen:
+                    name: 'screen3'
+                    WindTextField:
+                        id: windtextfield
+                    EnterWind:
+                    WindMod:
+                    PerformanceScore:
+                Screen:
+                    name: 'screen4'
+                    EventListScreen:
+                        id: event_screen 
+                    EventTextSearch:
+                        id: event_search
+                Screen:
+                    name: 'screen5'
+                    TrackingScreen:
+
+            MDNavigationDrawer:
+                id: nav_drawer
+
+                ContentNavigationDrawer:
+                    id: content_drawer
+
